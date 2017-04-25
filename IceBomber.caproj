@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>IceBomber</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>m2plga10arsz</unique-id>
+    <saved-with-version>24400</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="video" version="1">Video</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>832</width>
+        <height>832</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Menù</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Penguin1" sid="364888964957207">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Direction" sid="627487089082052" type="number" />
+                <instance-variable name="Speed" sid="167415998614062" type="number" />
+                <instance-variable name="PositionX" sid="820542585262729" type="number" />
+                <instance-variable name="PositionY" sid="488154791281187" type="number" />
+                <instance-variable name="Range" sid="842757807955822" type="number" />
+                <instance-variable name="BombOnLayout" sid="542809770458365" type="number" />
+                <instance-variable name="MaxBomb" sid="292277232569651" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="859988285066632">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="8Direction" sid="505242912652039">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="935016106748305" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Front\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Front\1.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Front\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Front\3.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="399957072438308" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Back\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Back\1.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Back\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Back\2.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="514291567077018" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\1.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\3.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="271515625765334" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\1.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\0.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Pinguino\Profile\3.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DeathRight" pingpong="0" repeatcount="1" repeatto="0" sid="946816748714395" speed="0">
+                    <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin1\DeathLeft\000.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DeathLeft" pingpong="0" repeatcount="1" repeatto="0" sid="599285154537958" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin1\Death\001.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Block" sid="246966021503070">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="405969818826283" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Block\darkgray.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DestructiveBlock" sid="732352922662332">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="999755444906338" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Block\lightblue.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="222882735203830">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Victory" sid="540155962678777">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Sine" sid="356196461886119">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Bomb" sid="492372176875936">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="BombUID" sid="747092521687138" type="number" />
+                <instance-variable name="Range" sid="958145317176608" type="number" />
+                <instance-variable name="Counter" sid="993982359215825" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="301189724563480">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="981749043117586" speed="6">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\bomb1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\bomb2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Explosion" sid="506531322896669">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="457199836391740">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="749223495154502">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="5" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="546854114492306" speed="6">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Esplosioni\explosion1.png">
+                        <collision-poly>
+                            <point x="0.0106383" y="0.0106383" />
+                            <point x="0.989362" y="0.0106383" />
+                            <point x="0.989362" y="0.989362" />
+                            <point x="0.0106383" y="0.989362" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Esplosioni\explosion2.png">
+                        <collision-poly>
+                            <point x="0.0106383" y="0.0106383" />
+                            <point x="0.989362" y="0.0106383" />
+                            <point x="0.989362" y="0.989362" />
+                            <point x="0.0106383" y="0.989362" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Esplosioni\explosion3.png">
+                        <collision-poly>
+                            <point x="0.0106383" y="0.0106383" />
+                            <point x="0.989362" y="0.0106383" />
+                            <point x="0.989362" y="0.989362" />
+                            <point x="0.0106383" y="0.989362" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Esplosioni\explosion4.png">
+                        <collision-poly>
+                            <point x="0.0106383" y="0.0106383" />
+                            <point x="0.989362" y="0.0106383" />
+                            <point x="0.989362" y="0.989362" />
+                            <point x="0.0106383" y="0.989362" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Esplosioni\explosion5.png">
+                        <collision-poly>
+                            <point x="0.0106383" y="0.0106383" />
+                            <point x="0.989362" y="0.0106383" />
+                            <point x="0.989362" y="0.989362" />
+                            <point x="0.0106383" y="0.989362" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="271722612346973">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Audio" sid="811303933679480">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="PowerUp" sid="627390565791417">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="544588522406777">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="887348734594398" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\21-bomb-bug.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\Baby-Feet-icon.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\explosion1600.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Penguin2" sid="857554528285708">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Direction" sid="318713770392306" type="number" />
+                <instance-variable name="Speed" sid="535874037717481" type="number" />
+                <instance-variable name="PositionX" sid="186345316170005" type="number" />
+                <instance-variable name="PositionY" sid="751233508752998" type="number" />
+                <instance-variable name="Range" sid="658816945960348" type="number" />
+                <instance-variable name="BombOnLayout" sid="245405602583590" type="number" />
+                <instance-variable name="MaxBomb" sid="712374927905219" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="493834301189118" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Down\000.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Down\001.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Down\002.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Down\003.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="401863237194553" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Up\000.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Up\001.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Up\002.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Up\003.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="509308565130240" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Right\000.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Right\001.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Right\002.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Right\003.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="170881727522821" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Left\000.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Left\002.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Left\001.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin\Left\003.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                            <point x="0.5" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DeathRight" pingpong="0" repeatcount="0" repeatto="0" sid="535766027699051" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_49\Desktop\IceBomber\Animations\Penguin1\DeathLeft\000.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="DeathLeft" pingpong="0" repeatcount="1" repeatto="0" sid="884540479295896" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Salvataggi progetti Construct\IceBomber\Animations\Penguin1\DeathLeft\000.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Background" sid="321910568951438">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\dbga_49\Desktop\IceBomber\Textures\TiledBackground.png" />
+        </object-type>
+        <object-type name="SpawnBlock" sid="113478654019581">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="SpawnEnable" sid="982554415752151" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="992668315549710" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Background2" sid="544827450684956">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="703153233388725" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\dbga_49\Desktop\PenguinMenu.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SinglePlayer" sid="374086832257752">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Icebomber" sid="972913863531060">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Sine" sid="221838025343562">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Petroil" sid="315046255379062">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Direction" sid="630928426983724" type="number" />
+                <instance-variable name="CurrentDestX" sid="364865943098278" type="number" />
+                <instance-variable name="CurrentDestY" sid="500642504907644" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="662469648824866">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="295771567388322">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="161378534722641" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\PetrolioFront.png">
+                        <collision-poly>
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Up" pingpong="0" repeatcount="1" repeatto="0" sid="775911340215851" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\PetrolioFront.png">
+                        <collision-poly>
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Right" pingpong="0" repeatcount="1" repeatto="0" sid="415152351238974" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\PetrolioNoFear.png">
+                        <collision-poly>
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Left" pingpong="0" repeatcount="1" repeatto="0" sid="694514609361719" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\Sprite &amp; Sound\PetrolioNoFear.png">
+                        <collision-poly>
+                            <point x="0.9375" y="0.9375" />
+                            <point x="0.0625" y="0.9375" />
+                            <point x="0.0625" y="0.0625" />
+                            <point x="0.9375" y="0.0625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Destination" sid="395510851934306">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824929377967749" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Multiplayer" sid="141888176668545">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Mouse" sid="654215734920543">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Background3" sid="283524891467223">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="InstructionsSinglePlayer" sid="666692972411102">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="IstructionsMultiPlayer" sid="304433498960765">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Video" sid="948837752495538">
+            <plugin id="video" />
+        </object-type>
+        <object-type name="CariniECoccolosi" sid="426215984548445">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Overlap" plugin-id="Sprite" sid="962577092129934">
+            <members>
+                <member>Block</member>
+                <member>Bomb</member>
+                <member>DestructiveBlock</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>MultiplayerGamePlay.xml</layout>
+        <layout>Menù.xml</layout>
+        <layout>SingleplayerGamePlay.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event Sheet Multiplayer.xml</event-sheet>
+        <event-sheet>Event Sheet Menu.xml</event-sheet>
+        <event-sheet>Event sheet Singleplayer.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="87" />
+        <global-instance type="Function" uid="91" />
+        <global-instance type="Audio" uid="53">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Mouse" uid="267" />
+    </global-instances>
+    <sounds-folder>
+        <file name="Esplosione.m4a" />
+        <file name="Esplosione.ogg" />
+        <file name="OMFG - Hello.m4a" />
+        <file name="OMFG - Hello.ogg" />
+        <file name="Super Mario Bros - Game Over.m4a" />
+        <file name="Super Mario Bros - Game Over.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file name="Intro.ogv" />
+        <file name="Intro.webm" />
+        <file name="Intro.mp4" />
+        <file name="liquidismpart2-demo.html" />
+        <file name="liquidismpart2-webfont.woff" />
+        <file name="liquidismpart2-webfont.woff2" />
+        <file name="stylesheet.css" />
+    </files-folder>
+</c2project>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event Sheet Menu</name>
+    <events>
+        <event-group description="" sid="977958094690455" title="Multiplayer">
+            <sub-events>
+                <event-block sid="806119599374065">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="198712237823203" type="Mouse">
+                            <param id="0" name="Object">Multiplayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="817990041456682" type="Multiplayer">
+                            <param id="0" name="Color">rgb(255, 102, 0)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="977224722117953" type="IstructionsMultiPlayer">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="767984362373797">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="956176572025387" type="Mouse">
+                            <param id="0" name="Object">Multiplayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="414703794014447" type="Multiplayer">
+                            <param id="0" name="Color">rgb(255, 255, 0)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="982708963695291" type="IstructionsMultiPlayer">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="944331193751956">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="351677139187776" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Multiplayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="256346599873354" type="System">
+                            <param id="0" name="Layout">MultiplayerGamePlay</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="951898964218777" title="SinglePlayer">
+            <sub-events>
+                <event-block sid="760985293916526">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="825882181043152" type="Mouse">
+                            <param id="0" name="Object">SinglePlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="428245566685689" type="SinglePlayer">
+                            <param id="0" name="Color">rgb(255, 102, 0)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="187443407503190" type="InstructionsSinglePlayer">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="331402011208473">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="172694639268414" type="Mouse">
+                            <param id="0" name="Object">SinglePlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="549298973711616" type="SinglePlayer">
+                            <param id="0" name="Color">rgb(255, 255, 0)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="202186291482180" type="InstructionsSinglePlayer">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="547984787869080">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="469245964375071" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SinglePlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="817559305039191" type="System">
+                            <param id="0" name="Layout">SingleplayerGamePlay</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="706279957227693" title="Video">
+            <sub-events>
+                <event-block sid="592982569425921">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="637545744830366" type="Mouse">
+                            <param id="0" name="Object">Video</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="518344472372883" type="Video">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="158023623488015">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="454231529290550" type="Mouse">
+                            <param id="0" name="Object">Video</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="719518178764910" type="Video">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="615712900959545">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="633919576086274" type="Video" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Pause" sid="921459684578936" type="Video" />
+                    </actions>
+                </event-block>
+                <event-block sid="799272311299418">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="763531946330398" type="Video" />
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Play" sid="961792691523163" type="Video" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet Singleplayer</name>
+    <events>
+        <event-group description="" sid="306299491620561" title="On StartSP">
+            <sub-events>
+                <event-block sid="427836800612102">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="910073557678944" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="653892167664203" type="Penguin1">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="605112133357976" type="Penguin1" />
+                        <action id="-10" name="Set value" sid="919497398705342" type="Penguin1">
+                            <param id="0" name="Instance variable">PositionX</param>
+                            <param id="1" name="Value">Penguin1.X </param>
+                        </action>
+                        <action id="-10" name="Set value" sid="358396042482903" type="Penguin1">
+                            <param id="0" name="Instance variable">PositionY</param>
+                            <param id="1" name="Value">Penguin1.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="840944818377500" type="Petroil">
+                            <param id="0" name="Obstacle">Block</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="456749099462803" type="Petroil">
+                            <param id="0" name="Obstacle">DestructiveBlock</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="432804374001169" type="Petroil">
+                            <param id="0" name="Obstacle">Bomb</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="958293629483924" type="System">
+                            <param id="0" name="Variable">LiveOrDeath</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="423802816728328" type="Audio">
+                            <param id="0" name="Audio file">OMFG - Hello</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;OMFG&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="335137276500849" type="Victory">
+                            <param id="0" name="Family name">&quot;liquidism_part_2regular&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="267697057147030">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="369415306881039" type="System">
+                                    <param id="0" name="Object">Petroil</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="441497545610642" type="Function">
+                                    <param id="0" name="Name">&quot;PetroilDestination&quot;</param>
+                                    <param id="1" name="Parameter {n}">Petroil.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="602426676540741">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Set value" sid="949050455395482" type="SpawnBlock">
+                                    <param id="0" name="Instance variable">SpawnEnable</param>
+                                    <param id="1" name="Value">int(random(2))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="169270099121671">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="801869470301896" type="SpawnBlock">
+                                            <param id="0" name="Instance variable">SpawnEnable</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="864787659418477" type="SpawnBlock">
+                                            <param id="0" name="Object">DestructiveBlock</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="168952167388341" title="PlayerMovementsSP">
+            <sub-events>
+                <event-group description="" sid="621510980134034" title="PenguinSP">
+                    <sub-events>
+                        <event-block sid="350593694903659">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="409041237219111" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Dir_0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="904676397119770" type="Penguin1">
+                                    <param id="0" name="Instance variable">PositionY</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Penguin1.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="272966614568860">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="427387935702501" type="Penguin1">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Dir_Up</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="937798841704291" type="Penguin1">
+                                            <param id="0" name="Y">Self.Y - (Penguin1.Speed)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="861263156396469">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="331319263916630" type="Penguin1">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Dir_Down</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="963270556115761" type="Penguin1">
+                                            <param id="0" name="Y">Self.Y + (Penguin1.Speed)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="161714955036963">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="272391857426508" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Dir_0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="578994275912662" type="Penguin1">
+                                    <param id="0" name="Instance variable">PositionX</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Penguin1.X</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="914091191082675">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="591583892558249" type="Penguin1">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Dir_Right</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="159359235351098" type="Penguin1">
+                                            <param id="0" name="X">Self.X + (Penguin1.Speed)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="160974992811957">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="885436025229149" type="Penguin1">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Dir_Left</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="351202666371519" type="Penguin1">
+                                            <param id="0" name="X">Self.X - (Penguin1.Speed)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="205302971164678" title="PlayerSPControls">
+            <sub-events>
+                <event-block sid="893188448182863">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="958083238695221" type="System">
+                            <param id="0" name="Variable">LiveOrDeath</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="446857719711719">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="825957011854397" type="Keyboard">
+                                    <param id="0" name="Key">96 (0 (tn))</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="692606321867918" type="System">
+                                    <param id="0" name="First value">Penguin1.BombOnLayout</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">Penguin1.MaxBomb</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="119307756881742" type="System">
+                                    <param id="0" name="Object to create">Bomb</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">int(Penguin1.ImagePointX(0) / 64) * 64 + 32</param>
+                                    <param id="3" name="Y">int(Penguin1.ImagePointY(0) / 64) * 64 + 32</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="361591166373429" type="Bomb">
+                                    <param id="0" name="Instance variable">BombUID</param>
+                                    <param id="1" name="Value">Penguin1.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="122016032452397" type="Bomb">
+                                    <param id="0" name="Instance variable">Range</param>
+                                    <param id="1" name="Value">Penguin1.Range</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="848931088588469" type="Penguin1">
+                                    <param id="0" name="Instance variable">BombOnLayout</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="828334052793394">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="434021945637597" type="Penguin1">
+                                    <param id="0" name="Instance variable">PositionX</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Penguin1.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="273198189022532" type="Penguin1">
+                                    <param id="0" name="Instance variable">PositionY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Penguin1.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="518929979303063" type="Penguin1">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="2" name="Stop" sid="916776308540131" type="Penguin1" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="129405971860857">
+                                    <conditions>
+                                        <condition id="-36" name="Pick overlapping point" sid="327936254966288" type="System">
+                                            <param id="0" name="Object">Overlap</param>
+                                            <param id="1" name="X">Penguin1.PositionX + 64</param>
+                                            <param id="2" name="Y">Penguin1.PositionY</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="979266630369794">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="666545052554097" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="764610160067315">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="722276279291292" type="Keyboard">
+                                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="982859916001588" type="Keyboard">
+                                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="939717774629510" type="Keyboard">
+                                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="165899529555609" type="Keyboard">
+                                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="594741330784310" type="Penguin1">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Value">Dir_Right</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="237254172287241" type="Penguin1">
+                                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="918973707817649" type="Penguin1">
+                                                    <param id="0" name="Instance variable">PositionX</param>
+                                                    <param id="1" name="Value">Penguin1.X + 64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="418329823451558">
+                                    <conditions>
+                                        <condition id="-36" name="Pick overlapping point" sid="919750792924712" type="System">
+                                            <param id="0" name="Object">Overlap</param>
+                                            <param id="1" name="X">Penguin1.PositionX - 64</param>
+                                            <param id="2" name="Y">Penguin1.PositionY</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="651803239721541">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="537091415485807" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="399886994722164">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="336993445676341" type="Keyboard">
+                                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="624682018896369" type="Keyboard">
+                                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="131890344193661" type="Keyboard">
+                                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="513383563019579" type="Keyboard">
+                                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="909219411301115" type="Penguin1">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Value">Dir_Left</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="658969921224829" type="Penguin1">
+                                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="490466582190886" type="Penguin1">
+                                                    <param id="0" name="Instance variable">PositionX</param>
+                                                    <param id="1" name="Value">Penguin1.X - 64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="112370037090289">
+                                    <conditions>
+                                        <condition id="-36" name="Pick overlapping point" sid="734711805218651" type="System">
+                                            <param id="0" name="Object">Overlap</param>
+                                            <param id="1" name="X">Penguin1.PositionX </param>
+                                            <param id="2" name="Y">Penguin1.PositionY - 64</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="655645085465828">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="990550416120566" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="959860554278292">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="581411198122272" type="Keyboard">
+                                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="160271519439921" type="Keyboard">
+                                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="705628437061243" type="Keyboard">
+                                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="490254822664706" type="Keyboard">
+                                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="780304631052269" type="Penguin1">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Value">Dir_Up</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="283491023403877" type="Penguin1">
+                                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="124612992065320" type="Penguin1">
+                                                    <param id="0" name="Instance variable">PositionY</param>
+                                                    <param id="1" name="Value">Penguin1.Y - 64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="353541137817718">
+                                    <conditions>
+                                        <condition id="-36" name="Pick overlapping point" sid="899957381125690" type="System">
+                                            <param id="0" name="Object">Overlap</param>
+                                            <param id="1" name="X">Penguin1.PositionX </param>
+                                            <param id="2" name="Y">Penguin1.PositionY + 64</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="374868612297428">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="964387373233073" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="785879290380783">
+                                            <conditions>
+                                                <condition id="2" name="Key is down" sid="415526671616286" type="Keyboard">
+                                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="450097913013807" type="Keyboard">
+                                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="687850683422477" type="Keyboard">
+                                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="673926744259433" type="Keyboard">
+                                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="161154840653825" type="Penguin1">
+                                                    <param id="0" name="Instance variable">Direction</param>
+                                                    <param id="1" name="Value">Dir_Down</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="215266519996342" type="Penguin1">
+                                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="284333663273309" type="Penguin1">
+                                                    <param id="0" name="Instance variable">PositionY</param>
+                                                    <param id="1" name="Value">Penguin1.Y + 64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="179441912161412" title="ExplosionBombSP">
+            <sub-events>
+                <event-block sid="686222267378948">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="347294897240805" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="121931808892341" type="Bomb">
+                            <param id="0" name="Instance variable">Counter</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="512097080843761">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="435921380658603" type="Bomb">
+                            <param id="0" name="Instance variable">Counter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="540496243571332" type="Explosion">
+                            <param id="0" name="Object">Bomb</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="738258583165139" type="Bomb" />
+                        <action id="0" name="Call function" sid="644472700891317" type="Function">
+                            <param id="0" name="Name">&quot;ExplosionRange&quot;</param>
+                            <param id="1" name="Parameter {n}">Bomb.Range{###}64{###}0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="261009788499022" type="Function">
+                            <param id="0" name="Name">&quot;ExplosionRange&quot;</param>
+                            <param id="1" name="Parameter {n}">Bomb.Range{###}-64{###}0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="729254026323556" type="Function">
+                            <param id="0" name="Name">&quot;ExplosionRange&quot;</param>
+                            <param id="1" name="Parameter {n}">Bomb.Range{###}0{###}64</param>
+                        </action>
+                        <action id="0" name="Call function" sid="789345040480043" type="Function">
+                            <param id="0" name="Name">&quot;ExplosionRange&quot;</param>
+                            <param id="1" name="Parameter {n}">Bomb.Range{###}0{###}-64</param>
+                        </action>
+                        <action id="6" name="Stop" sid="639383578157244" type="Audio">
+                            <param id="0" name="Tag">&quot;Explosion&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="119875122191564" type="Audio">
+                            <param id="0" name="Audio file">Esplosione</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Explosion&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="578007066700098" type="Function">
+                            <param id="0" name="Name">&quot;PetroilRegenerateMap&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="587377213883025">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="804429102573607" type="Bomb" />
+                        <condition id="-7" name="Compare instance variable" sid="473322079581143" type="Bomb">
+                            <param id="0" name="Instance variable">BombUID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Penguin1.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="141419477083358" type="Penguin1">
+                            <param id="0" name="Instance variable">BombOnLayout</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="754860268293405" title="FunctionsSP">
+            <sub-events>
+                <event-block sid="193713464938578">
+                    <conditions>
+                        <condition id="0" name="On function" sid="248126009608516" type="Function">
+                            <param id="0" name="Name">&quot;ExplosionRange&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="286898443349196">
+                            <conditions>
+                                <condition id="-10" name="For" sid="518208745546517" type="System">
+                                    <param id="0" name="Name">&quot;Distance&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="544049309722999" type="System">
+                                    <param id="0" name="Object to create">Explosion</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">Bomb.X + (Function.Param(1) * loopindex(&quot;Distance&quot;))</param>
+                                    <param id="3" name="Y">Bomb.Y + (Function.Param(2) * loopindex(&quot;Distance&quot;))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="664339795319943">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="756106233120175" type="Explosion">
+                                            <param id="0" name="Object">Block</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-24" name="Stop loop" sid="335176485764376" type="System" />
+                                        <action id="-9" name="Destroy" sid="259599526117862" type="Explosion" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="346938314575037">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="699353441408765" type="Explosion">
+                                            <param id="0" name="Object">DestructiveBlock</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="447752718340913" type="DestructiveBlock" />
+                                        <action id="-24" name="Stop loop" sid="324311002176413" type="System" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="488697908799438" title="PowerUpSP">
+            <sub-events>
+                <event-block sid="851017271336525">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="742574567182288" type="Penguin1">
+                            <param id="0" name="Object">PowerUp</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="347805270963287">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="155097190421538" type="PowerUp">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="486790432569899" type="PowerUp" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="282464209496390">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="874898581004791" type="Penguin1">
+                                            <param id="0" name="Instance variable">MaxBomb</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="892682833335503" type="Penguin1">
+                                            <param id="0" name="Instance variable">MaxBomb</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="206875675488753">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="676709258557883" type="PowerUp">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="101620117868503">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="454624598247000" type="Penguin1">
+                                            <param id="0" name="Instance variable">Speed</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="964965491108371" type="Penguin1">
+                                            <param id="0" name="Instance variable">Speed</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="315285529560024" type="PowerUp" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="957223347316374">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="405341192736550" type="Penguin1">
+                                            <param id="0" name="Instance variable">Speed</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="321022299007447" type="PowerUp" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="860600694692922">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="828658794564295" type="PowerUp">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="968457544056570" type="PowerUp" />
+                            </actions>
+                            <sub-events>
+                                <event-block sid="373635210987063">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="268696676121282" type="Penguin1">
+                                            <param id="0" name="Instance variable">Range</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Add to" sid="712848795072896" type="Penguin1">
+                                            <param id="0" name="Instance variable">Range</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="746009674011526">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="205167553138277" type="Penguin1">
+                            <param id="0" name="Instance variable">Speed</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set speed" sid="107155264249559" type="Penguin1">
+                            <param id="0" name="Speed">14</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="764785723979673">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="213582387658799" type="DestructiveBlock" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="206075705229887" type="Function">
+                            <param id="0" name="Name">&quot;PetroilRegenerateMap&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <variable constant="0" name="RandomVariable" sid="901626230384946" static="0" type="number">0</variable>
+                        <event-block sid="203578560927077">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="704887926422343" type="System">
+                                    <param id="0" name="Variable">RandomVariable</param>
+                                    <param id="1" name="Value">int(random(3))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="994414144411971">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="374258322128006" type="System">
+                                            <param id="0" name="Variable">RandomVariable</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="470752087021893" type="System">
+                                            <param id="0" name="Object to create">PowerUp</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">DestructiveBlock.X</param>
+                                            <param id="3" name="Y">DestructiveBlock.Y</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="272220044114182" type="PowerUp">
+                                            <param id="0" name="Frame number">int(random(PowerUp.AnimationFrameCount))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="730821568720201" title="VictoryConditionsSP">
+            <sub-events>
+                <event-block sid="509333599781456">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="613016926550534" type="System">
+                            <param id="0" name="First value">Petroil.PickedCount</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="677807741186792" type="Victory">
+                            <param id="0" name="Text">&quot;You win!! Press Backspace to return to menu&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="436234596449508" type="Victory">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="512349331848809" type="System">
+                            <param id="0" name="Variable">LiveOrDeath</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="6" name="Stop" sid="778251568063698" type="Audio">
+                            <param id="0" name="Tag">&quot;OMFG&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="977654281381678">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="392878436806226" type="Penguin1">
+                            <param id="0" name="Object">Explosion</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="506489102721153" type="Penguin1">
+                            <param id="0" name="Object">Petroil</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="728005077164448" type="Victory">
+                            <param id="0" name="Text">&quot;Game Over! Press Backspace to try again!&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="595935257802552" type="Victory">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="951434963863634" type="System">
+                            <param id="0" name="Variable">LiveOrDeath</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="6" name="Stop" sid="282420309021354" type="Audio">
+                            <param id="0" name="Tag">&quot;OMFG&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="317736826481261">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="815667248498915" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Dir_Right</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="876189629498718" type="Penguin1">
+                                    <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="801095933761895">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="795353857753257" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Dir_Left</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="844381244267689" type="Penguin1">
+                                    <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="678662667318623">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="733611447734775" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Dir_Down</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="181452251333213" type="Penguin1">
+                                    <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="814589847286904">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="660862127636975" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Dir_Up</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="611676901998584" type="Penguin1">
+                                    <param id="0" name="Animation">&quot;DeathLeft&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="611872334282660">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="262738081789920" type="Penguin1">
+                                    <param id="0" name="Instance variable">Direction</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Dir_0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="566356489881265" type="Penguin1">
+                                    <param id="0" name="Animation">&quot;DeathRight&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="803302656773330">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="593575880835845" type="System">
+                            <param id="0" name="Variable">LiveOrDeath</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="489308774516967">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="563096032281722" type="Keyboard">
+                                    <param id="0" name="Key">8 (Backspace)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="426449531316498" type="System">
+                                    <param id="0" name="Layout">Menù</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="378225590062002" title="PetroilMovementsSP">
+            <sub-events>
+                <event-block sid="706925314396754">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="264989881545137" type="Explosion">
+                            <param id="0" name="Object">Petroil</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="544610709303756" type="Petroil" />
+                    </actions>
+                </event-block>
+                <event-block sid="216007571846405">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="516360354314537" type="Petroil">
+                            <param id="0" name="Object">PowerUp</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="853810259562428" type="PowerUp" />
+                    </actions>
+                </event-block>
+                <event-block sid="412749472569619">
+                    <conditions>
+                        <condition id="0" name="On function" sid="683109446638531" type="Function">
+                            <param id="0" name="Name">&quot;PetroilRegenerateMap&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="566056063005443">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="686477319302917" type="System">
+                                    <param id="0" name="Object">Petroil</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="713113621586146" type="Petroil" />
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="489038432977318" type="Petroil">
+                                    <param id="0" name="X">Self.CurrentDestX</param>
+                                    <param id="1" name="Y">Self.CurrentDestY</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="298845974251844">
+                    <conditions>
+                        <condition id="0" name="On function" sid="388859142443564" type="Function">
+                            <param id="0" name="Name">&quot;PetroilDestination&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="691379348480029">
+                            <conditions>
+                                <condition id="-16" name="Pick random instance" sid="161740568502346" type="System">
+                                    <param id="0" name="Object">Destination</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="624730920877125" type="Petroil">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="788639375773687" type="Petroil" />
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="559607810350368" type="Petroil">
+                                    <param id="0" name="X">Destination.X</param>
+                                    <param id="1" name="Y">Destination.Y</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="699638764127188" type="Petroil">
+                                    <param id="0" name="Instance variable">CurrentDestX</param>
+                                    <param id="1" name="Value">Destination.X</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="486481562735789" type="Petroil">
+                                    <param id="0" name="Instance variable">CurrentDestY</param>
+                                    <param id="1" name="Value">Destination.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="363418699642486">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="356206221514541" type="Petroil" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="389684795049215" type="Petroil" />
+                    </actions>
+                </event-block>
+                <event-block sid="782941311760511">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="1" name="On failed to find path" sid="656588002813246" type="Petroil" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="837999973417490" type="Function">
+                            <param id="0" name="Name">&quot;PetroilDestination&quot;</param>
+                            <param id="1" name="Parameter {n}">Petroil.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="768033932981427">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="5" name="On arrived" sid="809085402513995" type="Petroil" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="145031315538632" type="Function">
+                            <param id="0" name="Name">&quot;PetroilDestination&quot;</param>
+                            <param id="1" name="Parameter {n}">Petroil.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="797021869384941">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="752297296387798" type="System">
+                            <param id="0" name="Object">Petroil</param>
+                        </condition>
+                        <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="348066325022538" type="Petroil" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="447670516062032">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="179100323977045" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">255</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="437096279921837" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">285</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="927652700293421" type="Petroil">
+                                    <param id="0" name="Animation">&quot;Up&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="203869658720717">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="647553038768206" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="301821322789132" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">35</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="114174174358018" type="Petroil">
+                                    <param id="0" name="Animation">&quot;Right&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="421037200910252">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="462597128951966" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">75</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="314839278821273" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">105</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="173387689072528" type="Petroil">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="442485662475554">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="912543281066672" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">155</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="498798426786575" type="System">
+                                    <param id="0" name="First value">Petroil.Pathfinding.MovingAngle</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">205</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="387050373691070" type="Petroil">
+                                    <param id="0" name="Animation">&quot;Left&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="243418885629181">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="585991394089231" type="Bomb" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="696674705055372" type="Function">
+                            <param id="0" name="Name">&quot;PetroilRegenerateMap&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
