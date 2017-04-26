@@ -23,6 +23,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
@@ -619,6 +620,40 @@
         <object-type name="CariniECoccolosi" sid="426215984548445">
             <plugin id="Text" />
         </object-type>
+        <object-type name="GameOver" sid="429501881831678">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Sine" sid="650370790151947">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="LifeOrDeath" sid="776321764555960">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="874278480475261">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="784513070393529" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LifeOrDeath2" sid="161046224054388">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="641891204674615">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="502911957812494" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Overlap" plugin-id="Sprite" sid="962577092129934">
@@ -665,6 +700,12 @@
         <file name="OMFG - Hello.ogg" />
         <file name="Super Mario Bros - Game Over.m4a" />
         <file name="Super Mario Bros - Game Over.ogg" />
+        <file name="kaboom.m4a" />
+        <file name="kaboom.ogg" />
+        <file name="magnifico, Kowalski.m4a" />
+        <file name="magnifico, Kowalski.ogg" />
+        <file name="Bel lavoro Ragazzi.m4a" />
+        <file name="Bel lavoro Ragazzi.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>

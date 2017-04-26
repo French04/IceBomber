@@ -195,7 +195,7 @@
                 </instance>
                 <instance type="IstructionsMultiPlayer" uid="97">
                     <properties>
-                        <text>Attento Kowalski è arrivato Skipper... Questa calotta polare è troppo piccola per tutti e due! Combatti per il dominio del territorio! Attento però al petrolio lasciato dalle barche! Per muovere Skipper usa i tasti W,A,S,D, e la barra spaziatrice per usare le bombe. Per muovere Kowalski usa le frecce direzionali ed il tasto 0 per usare le bombe.</text>
+                        <text>Attento Kowalski è arrivato Rico... Questa calotta polare è troppo piccola per tutti e due! Combatti per il dominio del territorio! Attento però al petrolio lasciato dalle barche! Per muovere Rico usa i tasti W,A,S,D, e la barra spaziatrice per usare le bombe. Per muovere Kowalski usa le frecce direzionali ed il tasto 0 per usare le bombe.</text>
                         <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-16,700,0</font>
                         <color>255,255,255</color>

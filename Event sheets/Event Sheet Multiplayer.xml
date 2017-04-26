@@ -63,6 +63,14 @@
                             <param id="0" name="Family name">&quot;liquidism_part_2regular&quot;</param>
                             <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                         </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="480852258174641" type="LifeOrDeath">
+                            <param id="0" name="Pin to">Penguin2</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="222823130508020" type="LifeOrDeath2">
+                            <param id="0" name="Pin to">Penguin1</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="782729564225817">
@@ -867,15 +875,6 @@
                             <param id="0" name="Name">&quot;ExplosionRange&quot;</param>
                             <param id="1" name="Parameter {n}">Bomb.Range{###}0{###}-64</param>
                         </action>
-                        <action id="6" name="Stop" sid="768373729261315" type="Audio">
-                            <param id="0" name="Tag">&quot;Esplosione&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="793120058929018" type="Audio">
-                            <param id="0" name="Audio file">Esplosione</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;Explosion&quot;</param>
-                        </action>
                         <action id="0" name="Call function" sid="317295084333952" type="Function">
                             <param id="0" name="Name">&quot;PetroilRegenerateMap&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
@@ -896,6 +895,15 @@
                             <param id="0" name="Instance variable">BombOnLayout</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="6" name="Stop" sid="691962092157201" type="Audio">
+                            <param id="0" name="Tag">&quot;Esplosione&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="427362211127881" type="Audio">
+                            <param id="0" name="Audio file">Esplosione</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Explosion&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="724866140779028">
@@ -911,6 +919,15 @@
                         <action id="-12" name="Subtract from" sid="198391949843655" type="Penguin2">
                             <param id="0" name="Instance variable">BombOnLayout</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="6" name="Stop" sid="768373729261315" type="Audio">
+                            <param id="0" name="Tag">&quot;Esplosione&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="793120058929018" type="Audio">
+                            <param id="0" name="Audio file">Esplosione</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Explosion&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1313,7 +1330,7 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Set text" sid="416420915184219" type="Victory">
-                                    <param id="0" name="Text">&quot;Skipper Wins!! Press Backspace to Restart&quot;</param>
+                                    <param id="0" name="Text">&quot;Rico Wins!! Press Backspace to Restart&quot;</param>
                                 </action>
                                 <action id="-15" name="Set visible" sid="110042267648196" type="Victory">
                                     <param id="0" name="Visibility">1</param>
@@ -1325,6 +1342,7 @@
                                 <action id="6" name="Stop" sid="420819359241552" type="Audio">
                                     <param id="0" name="Tag">&quot;OMFG&quot;</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="928005362404242" type="LifeOrDeath2" />
                             </actions>
                             <sub-events>
                                 <event-block sid="399792213688755">
@@ -1427,6 +1445,7 @@
                                 <action id="6" name="Stop" sid="187304878431294" type="Audio">
                                     <param id="0" name="Tag">&quot;OMFG&quot;</param>
                                 </action>
+                                <action id="-9" name="Destroy" sid="966456157064802" type="LifeOrDeath" />
                             </actions>
                             <sub-events>
                                 <event-block sid="604455522453813">
@@ -1508,6 +1527,38 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="389486969848518">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="775547331628927" type="LifeOrDeath" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="359687316242216" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="0" name="Play" sid="602923179112640" type="Audio">
+                            <param id="0" name="Audio file">magnifico, Kowalski</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Kowalski&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="360569606805237">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="367159614247387" type="LifeOrDeath2" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="969372165304809" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="0" name="Play" sid="860954520461594" type="Audio">
+                            <param id="0" name="Audio file">kaboom</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;Kaboom&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="375291905562797" title="PetroilMovements">
@@ -1516,6 +1567,10 @@
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="924563452763178" type="Explosion">
                             <param id="0" name="Object">Petroil</param>
+                        </condition>
+                        <condition id="-10" name="Compare opacity" sid="438748209073773" type="Explosion">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Opacity">80</param>
                         </condition>
                     </conditions>
                     <actions>
