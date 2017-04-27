@@ -13,8 +13,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout order="0">Menù</layout>
         <layout order="2">MultiplayerGamePlay</layout>
         <layout order="4">SingleplayerGamePlay</layout>
-        <event-sheet order="1">Event Sheet Menu</event-sheet>
-        <event-sheet active="1" order="3">Event Sheet Multiplayer</event-sheet>
+        <event-sheet active="1" order="1">Event Sheet Menu</event-sheet>
+        <event-sheet order="3">Event Sheet Multiplayer</event-sheet>
         <event-sheet order="5">Event sheet Singleplayer</event-sheet>
     </open-tabs>
     <properties>

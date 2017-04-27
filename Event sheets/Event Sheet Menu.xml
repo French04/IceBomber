@@ -125,20 +125,20 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="615712900959545">
-                    <conditions>
-                        <condition id="-9" inverted="1" name="Is visible" sid="633919576086274" type="Video" />
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Pause" sid="921459684578936" type="Video" />
-                    </actions>
-                </event-block>
                 <event-block sid="799272311299418">
                     <conditions>
                         <condition id="-9" name="Is visible" sid="763531946330398" type="Video" />
                     </conditions>
                     <actions>
                         <action id="6" name="Play" sid="961792691523163" type="Video" />
+                    </actions>
+                </event-block>
+                <event-block sid="615712900959545">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="633919576086274" type="Video" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Pause" sid="921459684578936" type="Video" />
                     </actions>
                 </event-block>
             </sub-events>
