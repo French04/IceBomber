@@ -71,6 +71,7 @@
                             <param id="0" name="Pin to">Penguin1</param>
                             <param id="1" name="Mode">0</param>
                         </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="446734389632343" type="SmogEffect" />
                     </actions>
                     <sub-events>
                         <event-block sid="782729564225817">
@@ -1574,7 +1575,12 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="513298499445200" type="Petroil" />
+                        <action behavior="Fade" id="1" name="Start fade" sid="513298499445200" type="Petroil" />
+                        <action id="0" name="Spawn another object" sid="772326405673301" type="Petroil">
+                            <param id="0" name="Object">Fire</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="908809392430430">

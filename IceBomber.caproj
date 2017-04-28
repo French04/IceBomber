@@ -546,6 +546,9 @@
                 <behavior-type name="Pathfinding" sid="295771567388322">
                     <behavior id="Pathfinding" />
                 </behavior-type>
+                <behavior-type name="Fade" sid="627001374479222">
+                    <behavior id="Fade" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Down" pingpong="0" repeatcount="1" repeatto="0" sid="161378534722641" speed="0">
@@ -654,6 +657,47 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="SmogEffect" sid="288191209898929">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="716477050170513">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363339621319262" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Fire" sid="238807302059397">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="686738659869813">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="5" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="559933869613238" speed="7">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\GitHub\BomberMan\Animations\Fire\Default\000.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0.0625" />
+                            <point x="0.6875" y="0.3125" />
+                            <point x="0.958333" y="0.5" />
+                            <point x="0.875" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.125" y="0.875" />
+                            <point x="0.0416667" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\GitHub\BomberMan\Animations\Fire\Default\001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\GitHub\BomberMan\Animations\Fire\Default\002.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\GitHub\BomberMan\Animations\Fire\Default\003.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Milano\GitHub\BomberMan\Animations\Fire\Default\004.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Overlap" plugin-id="Sprite" sid="962577092129934">
@@ -706,6 +750,8 @@
         <file name="magnifico, Kowalski.ogg" />
         <file name="Bel lavoro Ragazzi.m4a" />
         <file name="Bel lavoro Ragazzi.ogg" />
+        <file name="Corpo di un balenottero.m4a" />
+        <file name="Corpo di un balenottero.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>

@@ -53,6 +53,7 @@
                             <param id="0" name="Pin to">Penguin1</param>
                             <param id="1" name="Mode">0</param>
                         </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="734670235557807" type="SmogEffect" />
                     </actions>
                     <sub-events>
                         <event-block sid="267697057147030">
@@ -910,7 +911,7 @@
                         <action id="0" name="Play" sid="616932864917913" type="Audio">
                             <param id="0" name="Audio file">Super Mario Bros - Game Over</param>
                             <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
+                            <param id="3" name="Volume">20</param>
                             <param id="1" name="Tag (optional)">&quot;Game Over&quot;</param>
                         </action>
                     </actions>
@@ -946,7 +947,12 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="544610709303756" type="Petroil" />
+                        <action behavior="Fade" id="1" name="Start fade" sid="544610709303756" type="Petroil" />
+                        <action id="0" name="Spawn another object" sid="788576281190560" type="Petroil">
+                            <param id="0" name="Object">Fire</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="216007571846405">
